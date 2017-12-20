@@ -1,0 +1,160 @@
+{
+  "index.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.js",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/main.html"
+    ]
+  },
+  "html/main.html": {
+    "resources": [
+      "fonts/mui-icons-extra.ttf",
+      "css/main.css",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "images/hean_img.jpg",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/template.js",
+      "css/icons-extra.css",
+      "fonts/fontawesome-webfont.woff2",
+      "js/app.js",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf"
+    ],
+    "refer": [
+      "html/info-list.html",
+      "html/merchandise-list.html",
+      "html/form.html",
+      "html/map.html"
+    ]
+  },
+  "html/info-list.html": {
+    "resources": [
+      "js/app.js",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "css/mui.min.css",
+      "js/template.js",
+      "css/icons-extra.css",
+      "css/info-list.css"
+    ],
+    "refer": [
+      "html/info-detail.html"
+    ]
+  },
+  "html/info-detail.html": {
+    "resources": [
+      "css/imgviewer.css",
+      "js/app.js",
+      "js/mui.zoom.js",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "css/mui.min.css",
+      "js/mui.previewimage.js",
+      "js/template.js",
+      "css/icons-extra.css",
+      "css/info-detail.css"
+    ],
+    "refer": []
+  },
+  "html/merchandise-list.html": {
+    "resources": [
+      "js/app.js",
+      "css/merchandise-list.css",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "css/mui.min.css",
+      "js/template.js",
+      "css/icons-extra.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "html/merchandise-detail.html"
+    ]
+  },
+  "html/form.html": {
+    "resources": [
+      "js/app.js",
+      "css/icons-extra.css",
+      "css/info-detail.css",
+      "css/imgviewer.css",
+      "js/mui.zoom.js",
+      "css/font-awesome.css",
+      "css/app.css",
+      "js/mui.min.js",
+      "js/jquery-2.1.0.min.js",
+      "js/vue-html5-editor.js",
+      "css/mui.min.css",
+      "js/mui.previewimage.js",
+      "js/template.js",
+      "fonts/fontawesome-webfont.woff2"
+    ],
+    "refer": []
+  },
+  "html/merchandise-detail.html": {
+    "resources": [
+      "css/imgviewer.css",
+      "js/app.js",
+      "js/mui.zoom.js",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "css/merchandise-detail.css",
+      "css/mui.min.css",
+      "js/mui.previewimage.js",
+      "js/template.js",
+      "css/icons-extra.css",
+      "fonts/mui.ttf",
+      "fonts/mui-icons-extra.ttf"
+    ],
+    "refer": [
+      "html/orderfill.html"
+    ]
+  },
+  "html/orderfill.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.zoom.js",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "css/orderfill.css",
+      "css/mui.min.css",
+      "js/mui.previewimage.js",
+      "js/template.js",
+      "css/icons-extra.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "html/map.html": {
+    "resources": [
+      "css/imgviewer.css",
+      "js/app.js",
+      "js/mui.zoom.js",
+      "css/map.css",
+      "css/font-awesome.css",
+      "js/mui.min.js",
+      "css/app.css",
+      "js/jquery-2.1.0.min.js",
+      "css/mui.min.css",
+      "js/mui.previewimage.js",
+      "js/template.js",
+      "css/icons-extra.css"
+    ]
+  }
+}

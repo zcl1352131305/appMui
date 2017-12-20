@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/app.css"/>
+    <link href="../css/mui.picker.css" rel="stylesheet" />
+	<link href="../css/mui.poppicker.css" rel="stylesheet" />
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <style type="text/css">
+	    body{
+	    	background: #efeff4;
+	    }
+	    .mui-content{
+	    	margin: 0;
+	    	background: #efeff4;
+	    	height: 100%;
+	    }
+		.user_head_img{
+			width: 20%;
+			border-radius: 100%;
+			margin-left: 40%;
+		}
+		.user_name{
+			width: 100%;
+			margin-top: 3%;
+			text-align: center;
+			font-size: 20px;
+			font-weight: bold;
+			color: #555;
+			
+		}
+		.mui-table-view{
+			
+		}
+		.user_text{
+			font-size: 14px;
+			color: #444;
+		}
+		.mui-table-view-cell{
+			padding: 12px;
+		}
+		.mui-pull-right{
+			padding-right: 20px;
+		}
+    </style>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title" id="personal_grxx">个人信息</h1>
+    </header>
+    
+    <div class="mui-content mui-scroll-wrapper">
+	    <div class="mui-scroll">
+        
+        <ul class="mui-table-view" style="margin-top: 7px;" >
+            <li class="mui-table-view-cell">
+            	<img id="userHeadImg" class="user_head_img" src="../images/hean_img.jpg" onerror="$(this).attr('src','../images/hean_img.jpg')" />
+               	<div id="nicknameBig" class="user_name"></div> 
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell user_text" id="nicknamePanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left" id="personal_xm">姓名</span>
+	        		<span id="nickname" class="mui-pull-right"></span>
+        		</a>
+            </li>
+        </ul>
+        <!--<ul class="mui-table-view">
+            <li class="mui-table-view-cell user_text" id="genderPanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left">性别</span>
+	        		<span id="gender" class="mui-pull-right">男</span>
+        		</a>
+            </li>
+        </ul>-->
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell user_text" id="birthdayPanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left" id="personal_sr">生日</span>
+	        		<span id="birthday" class="mui-pull-right"></span>
+        		</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell user_text" id="languagePanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left" id="personal_yyqh">语言切换</span>
+	        		<span id="place" class="mui-pull-right"></span>
+        		</a>
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view" style="margin-top: 6%;">
+            <li class="mui-table-view-cell user_text" id="usernamePanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left" id="personal_yhm">用户名</span>
+	        		<span id="username" class="mui-pull-right"></span>
+        		</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view" >
+            <li class="mui-table-view-cell user_text" id="emailPanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left" id="personal_dzyx">电子邮箱</span>
+	        		<span id="email" class="mui-pull-right"></span>
+        		</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view" style="margin-top: 6%;">
+            <li class="mui-table-view-cell user_text" id="passwordPanle">
+            	<a class=" mui-navigate-right">
+	        		<span class="mui-pull-left"  id="personal_ggmm">更改密码</span>
+	        		<span id="passowrd" class="mui-pull-right"></span>
+        		</a>
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view" style="margin-top: 6%;">
+            <li class="mui-table-view-cell user_text">
+            	<div class="mui-content-padded">
+					<button id='singOut' class="mui-btn mui-btn-block mui-btn-yellow">退出登录</button>
+				</div>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <div id='placeResult' class="ui-alert"></div>
+    <form id="userInfoForm">
+    	<input type="hidden" id="userId" name="id" value="" />
+    </form>
+    
+   	<script src="../js/jquery-2.1.0.min.js"></script>
+	<script src="../js/mui.min.js"></script> 
+	<script src="../js/app.js"></script>
+	<script src="../js/template.js" type="text/javascript"></script>
+	<script src="../js/mui.picker.js"></script>
+	<script src="../js/mui.poppicker.js"></script>
+    <script type="text/javascript">
+	    mui.init({
+	    	beforeback: function(){
+				var page = plus.webview.getWebviewById('main');
+				mui.fire(page,'init');
+				return true;
+			}
+	    })
+	    var user;
+	    mui.plusReady(function(){
+	    	setUserVal();
+	    	initLanguage
+	    });
+	    mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		});
+	    window.addEventListener("init",function(event){
+	    	initLanguage();
+	    	mui.plusReady(function(){
+				setUserVal();
+			});
+	    }); 
+	    
+	    //设置用户信息
+	    function setUserVal(){
+	    	user = getGlobalAttribute("userInfo");
+	    	$("#userId").val(user.id);
+	    	$('#nicknameBig').html(user.nickname);
+	    	$('#nickname').html(user.nickname);
+	    	$('#birthday').html(user.birthday);
+	    	$('#username').html(user.username);
+	    	$('#email').html(user.email);
+	    	var userCity = getGlobalAttribute("userCity");
+	    	$("#place").html(userCity.city);
+	    	$("#userHeadImg").attr("src",basePath + user.headImg);
+	    	$("#userHeadImg").css("height",$("#userHeadImg").css("width"));
+	    }
+	    
+	    
+	    var btnArray = ['取消','确定'];
+	    
+	    //更改姓名
+	    mui(".mui-table-view").on("tap","#nicknamePanle",function(){
+	    	mui.prompt('','请输入姓名','更改姓名',btnArray,function(e){
+	    		if (e.index == 1) {
+	    			var value = e.value;
+	    			if(!notEmpty(value)){
+	    				plus.nativeUI.toast("姓名不能为空");
+	    			}
+	    			else if(value.length > 55){
+	    				plus.nativeUI.toast("姓名太长");
+	    			}
+	    			else{
+	    				var param = $("#userInfoForm").serializeJson();
+	                    param.nickname = value;
+	                    submitForm(param);
+	    			}
+                }
+	    	},'div');
+	    	changeInputStyle();
+	    });
+	    
+	     //更改生日
+	    mui(".mui-table-view").on("tap","#birthdayPanle",function(){
+	    	mui.prompt('','请选择生日','更改生日',btnArray,function(e){
+	    		if (e.index == 1) {
+	    			var value = e.value;
+	    			if(!notEmpty(value)){
+	    				plus.nativeUI.toast("生日不能为空");
+	    			}
+	    			else{
+	    				var param = $("#userInfoForm").serializeJson();
+	                    param.birthday = value;
+	                    submitForm(param);
+	    			}
+                }
+	    	},'div');
+	    	var date = new Date();
+	    	var seperator1 = "-";
+		    var month = date.getMonth() + 1;
+		    var strDate = date.getDate();
+		    if (month >= 1 && month <= 9) {
+		        month = "0" + month;
+		    }
+		    if (strDate >= 0 && strDate <= 9) {
+		        strDate = "0" + strDate;
+		    }
+		    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate ;
+	    	document.querySelector('.mui-popup-input input').type='date' ;
+	    	$('.mui-popup-input input').attr("max",currentdate);
+	    	changeInputStyle();
+	    });
+	    
+	    /*//更改用户名
+	    mui(".mui-table-view").on("tap","#usernamePanle",function(){
+	    	mui.prompt('','请输入用户名','更改用户名',btnArray,function(e){
+	    		if (e.index == 1) {
+	    			var value = e.value;
+	    			if(!notEmpty(value)){
+	    				plus.nativeUI.toast("用户名不能为空");
+	    			}
+	    			else if(value.length > 55){
+	    				plus.nativeUI.toast("用户名太长");
+	    			}
+	    			else{
+	    				var param = $("#userInfoForm").serializeJson();
+	                    param.username = value;
+	                    submitForm(param);
+	    			}
+                }
+	    	},'div');
+	    	changeInputStyle();
+	    });
+	    */
+	    //更改手机号
+	    mui(".mui-table-view").on("tap","#phonePanle",function(){
+	    	mui.prompt('','请输入手机号码','更改手机号码',btnArray,function(e){
+	    		if (e.index == 1) {
+	    			var value = e.value;
+	    			if(!notEmpty(value)){
+	    				plus.nativeUI.toast("手机号码不能为空");
+	    			}
+	    			else if(value.length != 11){
+	    				plus.nativeUI.toast("手机号码格式不正确");
+	    			}
+	    			else{
+	    				var param = $("#userInfoForm").serializeJson();
+	                    param.phone = value;
+	                    submitForm(param);
+	    			}
+                }
+	    	},'div');
+	    	changeInputStyle();
+	    });
+	    
+	    //更改邮箱
+	    mui(".mui-table-view").on("tap","#emailPanle",function(){
+	    	mui.prompt('','请输入邮箱','更改邮箱',btnArray,function(e){
+	    		if (e.index == 1) {
+	    			var value = e.value;
+	    			if(!notEmpty(value)){
+	    				plus.nativeUI.toast("邮箱不能为空");
+	    			}
+	    			else if(!(value.length > 3 && value.indexOf('@') > -1)){
+	    				plus.nativeUI.toast("邮箱格式不正确");
+	    			}
+	    			else if(value.length > 55){
+	    				plus.nativeUI.toast("邮箱太长");
+	    			}
+	    			else{
+	    				var param = $("#userInfoForm").serializeJson();
+	                    param.email = value;
+	                    submitForm(param);
+	    			}
+                }
+	    	},'div');
+	    	changeInputStyle();
+	    });
+	    
+	    //更改密码
+	    mui(".mui-table-view").on("tap","#passwordPanle",function(){
+	    	mui.prompt('','请输入新密码','更改密码',btnArray,function(e){
+	    		if (e.index == 1) {
+	    			var value = e.value;
+	    			if(!notEmpty(value)){
+	    				plus.nativeUI.toast("密码不能为空");
+	    			}
+	    			else if(value.length > 55){
+	    				plus.nativeUI.toast("密码太长");
+	    			}
+	    			else{
+	    				var param = $("#userInfoForm").serializeJson();
+	                    param.passowrd = value;
+	                    submitForm(param);
+	    			}
+               }
+	    	},'div');
+	    	changeInputStyle();
+	    });
+	    
+	    //更改语言
+	    mui(".mui-table-view").on("tap","#languagePanle",function(){
+	    	var picker = new mui.PopPicker();
+			picker.setData([
+		 		{value:'zh-cn',text:'中文(zh-cn)'},
+			 	{value:'en',text:'English(en)'}
+			]);
+			picker.show(function (selectItems) {
+				useLanguage(selectItems[0].value);
+				openViewWithFire("personal","init",{});
+			});
+	    });
+	    
+	    
+	    //提交表单更改信息
+	    function submitForm(param){
+	    	baseRequest({
+				url:"app_update.ac",
+				param:param,
+				success:function(data){
+					if(data.msg == '1' || data.msg == 1){
+						var user1 = data.userInfo;
+						console.log(user1);
+						setGlobalAttribute("userInfo",user1);
+						plus.nativeUI.toast("更改成功！");
+						openViewWithFire("personal","init",{});
+					}
+					else{
+						plus.nativeUI.toast(data.msg);
+					}
+				},
+				error:function(){}
+			});
+	    }
+	    
+	    //修改输入框样式
+	    function changeInputStyle(){
+	    	$('.mui-popup-input input').attr("style","border:none;border-bottom: 1px solid #999;background: #fafafa;");
+	    }
+	    
+	    
+	    mui(".mui-content-padded").on("tap","#singOut",function(){
+	    	mui.confirm("是否退出登录？","退出登录",['否','是'],function(e){
+	    		if(e.index == 1){
+	    			rmvGlobalAttribute("userInfo");	    			
+	    			var loginPage;
+					if(null == getWebviewPage("login")){
+			    		loginPage = mui.preload({
+						    url:"../login.html",
+						    id:"login",
+						});
+			    	}
+			    	else{
+			    		loginPage = getWebviewPage("login");
+			    	}
+					mui.openWindow({
+						id: "login"
+					});
+	    		}
+	    	},'div');
+	    });
+	    
+	    
+	    
+	    
+	    
+	    /*点击头像触发*/ 
+        document.getElementById('userHeadImg').addEventListener('tap', function() { 
+        	if (mui.os.plus) { 
+                var a = [{ 
+                    title: "拍照" 
+                }, { 
+                    title: "从手机相册选择" 
+                }]; 
+                plus.nativeUI.actionSheet({ 
+                    title: "修改用户头像", 
+                    cancel: "取消", 
+                    buttons: a 
+                }, function(b) { /*actionSheet 按钮点击事件*/ 
+                    switch (b.index) { 
+                        case 0: 
+                            break; 
+                        case 1: 
+                            getImage(); /*拍照*/ 
+                            break; 
+                        case 2: 
+                            galleryImg();/*打开相册*/ 
+                            break; 
+                        default: 
+                            break; 
+                    } 
+                }) 
+            } 
+        }, false); 
+	    
+	    
+	    //拍照 
+        function getImage() { 
+            var c = plus.camera.getCamera(); 
+            c.captureImage(function(e) { 
+                plus.io.resolveLocalFileSystemURL(e, function(entry) { 
+                    var s = entry.toLocalURL() + "?version=" + new Date().getTime(); 
+                    uploadHead(s); /*上传图片*/ 
+                }, function(e) { 
+                    console.log("读取拍照文件错误：" + e.message); 
+                }); 
+            }, function(s) { 
+                console.log("error" + s); 
+            }, { 
+                filename: "_doc/head.png" 
+            }) 
+        } 
+        
+        //本地相册选择 
+        function galleryImg() { 
+            plus.gallery.pick(function(a) { 
+                plus.io.resolveLocalFileSystemURL(a, function(entry) { 
+                    plus.io.resolveLocalFileSystemURL("_doc/", function(root) { 
+                        root.getFile("head.png", {}, function(file) { 
+                            //文件已存在 
+                            file.remove(function() { 
+                                console.log("file remove success"); 
+                                entry.copyTo(root, 'head.png', function(e) { 
+                                        var e = e.fullPath + "?version=" + new Date().getTime(); 
+                                        uploadHead(e); /*上传图片*/ 
+                                        //变更大图预览的src 
+                                        //目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现 
+                                    }, 
+                                    function(e) { 
+                                        console.log('copy image fail:' + e.message); 
+                                    }); 
+                            }, function() { 
+                                console.log("delete image fail:" + e.message); 
+                            }); 
+                        }, function() { 
+                            //文件不存在 
+                            entry.copyTo(root, 'head.png', function(e) { 
+                                    var path = e.fullPath + "?version=" + new Date().getTime(); 
+                                    uploadHead(path); /*上传图片*/ 
+                                }, 
+                                function(e) { 
+                                    console.log('copy image fail:' + e.message); 
+                                }); 
+                        }); 
+                    }, function(e) { 
+                        console.log("get _www folder fail"); 
+                    }) 
+                }, function(e) { 
+                    console.log("读取拍照文件错误：" + e.message); 
+                }); 
+            }, function(a) {}, { 
+                filter: "image" 
+            }) 
+        }; 
+        
+        function uploadHead(imgPath) { 
+            console.log("imgPath = " + imgPath); 
+            var mainImage= document.getElementById("userHeadImg");
+　　　　		mainImage.src = imgPath;
+ 
+            var image = new Image(); 
+            image.src = imgPath; 
+            image.onload = function() { 
+            	console.log(1111);
+                var imgData = getBase64Image(image); 
+                console.log(imgData);
+                                
+                baseRequest({
+					url:"app_uploadHeadImg.ac",
+					param:{
+						imgBase64:imgData,
+						id:user.id
+					},
+					success:function(data){
+						var user1 = data.userInfo;
+						console.log(user1);
+						setGlobalAttribute("userInfo",user1);
+						plus.nativeUI.toast("头像上传成功！");
+						openViewWithFire("personal","init",{});
+					},
+					error:function(){}
+				});
+                
+            } 
+    } 
+        //将图片压缩转成base64 
+        function getBase64Image(img) { 
+            var canvas = document.createElement("canvas"); 
+            var width = img.width; 
+            var height = img.height; 
+            // calculate the width and height, constraining the proportions 
+            if (width > height) { 
+                if (width > 100) { 
+                    height = Math.round(height *= 100 / width); 
+                    width = 100; 
+                } 
+            } else { 
+                if (height > 100) { 
+                    width = Math.round(width *= 100 / height); 
+                    height = 100; 
+                } 
+            } 
+            canvas.width = width;   /*设置新的图片的宽度*/ 
+            canvas.height = height; /*设置新的图片的长度*/ 
+            var ctx = canvas.getContext("2d"); 
+            ctx.drawImage(img, 0, 0, width, height); /*绘图*/ 
+            var dataURL = canvas.toDataURL("image/png", 0.8); 
+            return dataURL.replace("data:image/png;base64,", ""); 
+        }   
+        
+        
+        
+        
+        //初始化语言
+        function initLanguage(){
+        	var language = getLanguage();
+ 			$('#personal_grxx').html(language.personal_title);
+ 			$('#personal_xm').html(language.nickname);
+ 			$('#personal_sr').html(language.birthday);
+ 			$('#personal_yyqh').html(language.languageToggle);
+ 			$('#personal_yhm').html(language.username);
+ 			$('#personal_dzyx').html(language.email);
+ 			$('#personal_ggmm').html(language.changePassword);
+ 			$('#singOut').html(language.logout);
+        }
+	    
+    </script>
+</body>
+</html>

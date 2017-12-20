@@ -1,0 +1,101 @@
+.mui-slider-item img{
+	height: 400px;
+}
+.mui-content .content{
+	margin: 5px 10px 0 10px;
+}
+.mui-content .content header{
+	border-bottom: 1px solid #efefef;
+	height: auto;
+	float: left;
+}
+
+.mui-content .content header h1{
+	font-size: 14px;
+	line-height: 22px;
+}
+.mui-content .content header .price{
+	font-size: 16px;
+	color: orangered;
+}
+.mui-content .content header .integral{
+	font-size: 12px;
+	color: #999;
+	margin-left: 10px;
+}
+.mui-content .content header .express{
+	font-size: 12px;
+	color: #999;
+	float: left;
+	text-align: left;
+}
+.mui-content .content header .volume{
+	font-size: 12px;
+	color: #999;
+	float: left;
+	text-align: center;
+}
+.mui-content .content header .address{
+	font-size: 12px;
+	color: #999;
+	float: left;
+	text-align: right;
+}
+p{
+	margin-bottom: 5px;
+}
+
+.mui-content .content .describe{
+	
+}
+.mui-content .content  .title span{
+	font-size: 16px;
+}
+.mui-content .content  .title{
+	font-size: 14px;
+	text-align: center;
+	background: #ededed;
+	color: #aaa;
+	height: 40px;
+	float: left;
+	width: 100%;
+	line-height: 40px;
+}
+.mui-content .content .describe img{
+	width: 100%;
+}
+nav.mui-bar{
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+}
+.otherOpt,.param{
+	float: left;
+	width: 100%;
+	padding: 2px 0 0 0;
+	border-bottom: 1px solid #efefef;
+	margin-bottom: 2px;
+}
+.param .mui-input-row {
+	font-size: 12px;
+	color: #666;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+    color: orange;
+}
+.otherOpt ul.mui-table-view:before{
+	height: 0px;
+}
+.otherOpt ul.mui-table-view:after{
+	height: 0px;
+}
+.otherOpt ul.mui-table-view{
+	float: left;
+}
+.otherOpt li{
+	font-size: 12px;
+	color: #999;
+}
+.otherOpt .mui-table-view-cell {
+	padding-top:12px
+}

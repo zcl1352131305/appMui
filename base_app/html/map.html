@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/app.css"/>
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/mui-icon-extra" rel="stylesheet" />
+    <link href="../css/map.css" rel="stylesheet" />
+    <link href="../css/imgviewer.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+
+</head>
+<body>
+	
+	<!-- 主页面标题 -->
+    <header class="mui-bar mui-bar-nav">
+    	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title" id="main_title">详情页</h1>
+    </header>
+    
+    <nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active">
+	        <span class="mui-icon mui-icon-home-filled"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-map"></span>
+	        <span class="mui-tab-label">附近</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-person"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon mui-icon-more"></span>
+	        <span class="mui-tab-label">更多</span>
+	    </a>
+	</nav>
+	
+	
+	
+	<!-- 主页面内容容器 -->
+    <div class="mui-content" >
+        <div id="map" class="map"></div>
+    </div>
+
+	<script src="../js/jquery-2.1.0.min.js"></script>
+	<script src="../js/mui.min.js"></script> 
+	<script src="../js/app.js"></script>
+	<script src="../js/template.js" type="text/javascript"></script>
+	<script src="../js/mui.zoom.js"></script>
+	<script src="../js/mui.previewimage.js"></script>
+    <script type="text/javascript">
+    
+    	mui.init();
+	    
+	    mui.previewImage();
+	    
+    	mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		}); 
+
+		mui.plusReady(function(){
+			mapObj = new plus.maps.Map("map");
+			initMap();
+		});
+		
+		
+		window.addEventListener("init",function(event){
+			initMap();
+	    });
+    	
+    	
+    	
+    	function initMap(){
+    		plus.nativeUI.showWaiting("正在获取当前位置...");
+			//获取用户位置
+			plus.geolocation.getCurrentPosition(function(p){
+				setTimeout(function(){
+					plus.nativeUI.closeWaiting();
+				mapObj.setCenter( new plus.maps.Point( p.coords.longitude, p.coords.latitude ));
+				},500);
+				
+			}, function(e){
+				alert('Geolocation error: ' + e.message);
+			});
+	    	
+    	}
+    	
+    
+     
+    </script>
+</body>
+</html>

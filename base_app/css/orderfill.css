@@ -1,0 +1,50 @@
+.mui-content .mui-card .mui-table-view .mui-table-view-divider{
+	line-height: 30px;
+	font-size: 14px;
+}
+.mui-content .mui-card{
+	margin-top: 13px;
+}
+.mui-input-row{
+	height: 30px;
+}
+.mui-input-row label {
+	padding:0;
+	line-height: 30px;
+	width: 30%;
+	font-size: 14px;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+	padding:0px;
+	height: 30px;
+	font-size: 12px;
+}
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	width: 70%;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear, .mui-input-row .mui-input-password~.mui-icon-eye, .mui-input-row .mui-input-speech~.mui-icon-speech{
+	top:2px
+}
+
+nav.mui-bar{
+    -webkit-box-shadow: 0 1px 6px #ccc;
+	box-shadow: 0 1px 6px #ccc;
+}
+nav.mui-bar .price{
+	width: 70%;
+	float: left;
+	line-height: 50px;
+}
+nav.mui-bar .price span{
+	margin-left: 10px;
+}
+nav.mui-bar .submit{
+	width: 30%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/app.css"/>
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/mui-icon-extra" rel="stylesheet" />
+    <link href="../css/iconfont.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	
+	<!-- 主界面菜单同时移动 -->
+    <!-- 侧滑导航根容器 -->
+    <div class="mui-off-canvas-wrap  mui-slide-in">
+        <!-- 主页面容器 -->
+        <div class="mui-inner-wrap">
+            <!-- 菜单容器 -->
+            <aside class="mui-off-canvas-left" id="offCanvasSide" style="background: #fff;">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll yysh_user">
+                        <!-- 菜单具体展示内容 -->
+                        <div class="yysh_user_head" id="userInfo">
+                            <img id="userHeadImg" src="../images/hean_img.jpg" onerror="$(this).attr('src','../images/hean_img.jpg')" />
+                            <div>
+                            	<span id="yysh_name">请登录</span>
+	                            <br />
+	                            <span id="yysh_username"></span>
+                            </div>
+                        </div>
+                        <div class="yysh_user_head_line"></div>
+                        <div class="yysh_function_list">
+                        	<div class="yysh_function" id="orderPage"> 
+                        		<div class="yysh_function_icon"><i class="fa fa-file-text"></i></div>
+                        		<div class="yysh_function_text" id="main_yhq">优惠券</div>
+                        		<div class="yysh_function_rightArrow"><i class="mui-icon mui-icon-arrowright"></i></div>
+                        	</div> 
+                        	<div class="yysh_function" id="lovePage">
+                        		<div class="yysh_function_icon"><i class="fa fa-star"></i></div>
+                        		<div class="yysh_function_text" id="main_wdsc">我的收藏</div>
+                        		<div class="yysh_function_rightArrow"><i class="mui-icon mui-icon-arrowright"></i></div>
+                        	</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </aside>
+            <!-- 主页面标题 -->
+            <header class="mui-bar mui-bar-nav">
+                <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide"></a>
+                <h1 class="mui-title" id="main_title">主页</h1>
+            </header>
+            
+            <nav class="mui-bar mui-bar-tab">
+    		    <a class="mui-tab-item mui-active">
+    		        <span class="mui-icon mui-icon-home-filled"></span>
+    		        <span class="mui-tab-label">首页</span>
+    		    </a>
+    		    <a class="mui-tab-item">
+    		        <span class="mui-icon mui-icon-map"></span>
+    		        <span class="mui-tab-label">附近</span>
+    		    </a>
+    		    <a class="mui-tab-item">
+    		        <span class="mui-icon mui-icon-person"></span>
+    		        <span class="mui-tab-label">我的</span>
+    		    </a>
+    		    <a class="mui-tab-item">
+    		        <span class="mui-icon mui-icon-more"></span>
+    		        <span class="mui-tab-label">更多</span>
+    		    </a>
+    		</nav>
+            
+            <!-- 主页面内容容器 -->
+            <div class="mui-content" >
+	            <div class="mui-scroll-wrapper" style="margin-top: 50px;"> 
+	                <div class="mui-scroll">
+	                    <div id="slider" class="mui-slider" >
+			              	<div class="mui-slider-group mui-slider-loop">
+				                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				                <div class="mui-slider-item mui-slider-item-duplicate">
+				                  	<a href="#">
+				                    	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509432878370&di=4246b8e71aee357ca5d99955b82af2ac&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8c1001e93901213f4f0a061c5de736d12f2e9531.jpg">
+				                  	</a>
+				                </div>
+				                <!-- 第一张 -->
+				                <div class="mui-slider-item">
+				                  	<a href="#">
+				                    	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509432878370&di=bcead3d5dfe5b6d5490defe86551e3a7&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F7dd98d1001e93901863274ff72ec54e736d1963b.jpg">
+				                  	</a>
+				                </div>
+				                <!-- 第二张 -->
+				                <div class="mui-slider-item">
+				                  	<a href="#">
+				                    	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509432878369&di=703d5d4859af8b142c21661454647c5c&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fd62a6059252dd42a8f18966b0a3b5bb5c8eab8d9.jpg">
+				                  	</a>
+				                </div>
+				                <!-- 第三张 -->
+				                <div class="mui-slider-item">
+				                  	<a href="#">
+				                    	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509432878369&di=0559c1c607b029d00b649b64d2e9ef40&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F0e2442a7d933c895b5f0d0bbd81373f083020067.jpg">
+				                  	</a>
+				                </div>
+				                <!-- 第四张 -->
+				                <div class="mui-slider-item">
+			                  		<a href="#">
+			                    		<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509432878370&di=4246b8e71aee357ca5d99955b82af2ac&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8c1001e93901213f4f0a061c5de736d12f2e9531.jpg">
+			                  		</a>
+				                </div>
+				                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				                <div class="mui-slider-item mui-slider-item-duplicate">
+				                  	<a href="#">
+				                    	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509432878370&di=bcead3d5dfe5b6d5490defe86551e3a7&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F7dd98d1001e93901863274ff72ec54e736d1963b.jpg">
+				                  	</a>
+				                </div>
+			              	</div>
+			              	<div class="mui-slider-indicator">
+				                <div class="mui-indicator mui-active"></div>
+				                <div class="mui-indicator"></div>
+				                <div class="mui-indicator"></div>
+				                <div class="mui-indicator"></div>
+			              	</div>
+			            </div>  
+			            
+			            <ul class="mui-table-view mui-grid-view" >
+				            <li id="info" class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-red-1">
+			                   		<span class="mui-icon-extra mui-icon-extra-order color-text-white"></span>
+			                	</div>
+			                    <div class="mui-media-body base-text-color font-bold">资讯</div>
+				            </li>
+				            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-purple-1">
+			                    	<span class="mui-icon iconfont icon-huodong color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">活动</div>
+				            </li>
+				            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-orange-1">
+			                    	<span class="mui-icon-extra mui-icon-extra-dictionary color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">攻略</div>
+				            </li>
+				            <li id="goods" class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-green-1">
+			                    	<span class="mui-icon-extra mui-icon-extra-class color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">产品</div>
+				            </li>
+				            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-orange-1">
+			                    	<span class="mui-icon-extra mui-icon-extra-hotel color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">展馆</div>
+				            </li>
+				            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-orange-2">
+			                    	<span class="mui-icon iconfont icon-youhuiquan- color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">优惠券</div>
+				            </li>
+				            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-yellow-1">
+			                    	<span class="mui-icon iconfont icon-wifi color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">WIFI</div>
+				            </li>
+				            <li id="diyTrack" class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+			                	<div class="mui-media-main-icon color-bg-gradation-blue-1">
+			                    	<span class="mui-icon iconfont icon-zuji color-text-white"></span>
+			                   	</div>
+			                    <div class="mui-media-body base-text-color font-bold">足迹</div>
+				            </li>
+		               	</ul>
+		               
+		               	<div class="main-content-1" id="actitys">
+								<header>优选活动
+									<a >更多<i class="fa fa-angle-right"></i></a>
+								</header>
+								
+								<div class="mui-col-xs-6" >
+									<img src="http://s3.lvjs.com.cn/pics//uploads/pc/place2/2015-03-04/0ee94511-c500-4909-859b-55c7ac6d24da_300_200.jpg" />
+									<p>圣诞驾到·舞动黄山·跟队自驾特卖</p>
+								</div>
+								<div class="mui-col-xs-6" >
+									<img src="http://pic.lvmama.com/uploads/pc/place2/2017-05-15/d8af24d6-aa4c-4e57-8957-e2aa0a062493_300_200.jpg" />
+									<p>上海、苏州、杭州、乌镇5日当地游</p>
+								</div>
+								<div class="mui-col-xs-6" >
+									<img src="http://pic.lvmama.com/uploads/pc/place2/2017-07-25/5f0e89f6-a767-4f59-895b-f1b825145aba_300_200.jpg" />
+									<p>杭州、乌镇西栅、西塘巴士3日游</p>
+								</div>
+								<div class="mui-col-xs-6" >
+									<img src="http://pic.lvmama.com/uploads/pc/place2/2017-05-31/be5a5042-8e79-4f9c-862b-f7fedb546680_300_200.jpg" />
+									<p>上海迪士尼乐园度假区巴士纯玩1日当地游</p>
+								</div>
+								
+							</div>
+							
+							<div class="main-content-2" id="goodsList">
+								<header>旅游产品
+									<a >更多<i class="fa fa-angle-right"></i></a>
+								</header>
+								<div class="mui-col-xs-4" >
+									<img src="http://s2.lvjs.com.cn/pics//uploads/pc/place2/2017-12-06/9bb49518-88ce-4c0b-994a-384d375baf9b_300_200.jpg" />
+									<p class="title">上海迪士尼乐园</p>
+									<p class="price">¥499</p>
+								</div>
+								<div class="mui-col-xs-4" >
+									<img src="http://s3.lvjs.com.cn/pics//uploads/pc/place2/2016-12-07/c42999d3-5782-4bfa-b722-94b3d2e6d350_300_200.jpg" />
+									<p class="title">长白山滑雪乐园</p>
+									<p class="price">¥4375</p>
+								</div>
+								<div class="mui-col-xs-4" >
+									<img src="http://s1.lvjs.com.cn/pics//uploads/pc/place2/2017-11-17/23cef7cf-ec88-4c88-a9f5-3e8aee89e71e_300_200.jpg" />
+									<p class="title">哈尔冰雪乡双飞</p>
+									<p class="price">¥2840</p>
+								</div>
+								<div class="mui-col-xs-4" >
+									<img src="http://s2.lvjs.com.cn/pics//uploads/pc/place2/2016-08-03/bd8d1f62-a722-4661-a8d0-6ebb610fb12f_300_200.jpg" />
+									<p class="title">湍口温泉自由行特卖</p>
+									<p class="price">¥1168</p>
+								</div>
+								<div class="mui-col-xs-4" >
+									<img src="http://s2.lvjs.com.cn/pics//uploads/pc/place2/2017-11-06/22d85867-2a5f-46be-bebd-e678ef237b7b_300_200.jpg" />
+									<p class="title">杭州 2天一晚</p>
+									<p class="price">¥1196</p>
+								</div>
+								<div class="mui-col-xs-4" >
+									<img src="http://s1.lvjs.com.cn/pics//uploads/pc/place2/2017-07-25/27246bb6-2a5c-410f-a5b6-8ecf7a9e3220_300_200.jpg" />
+									<p class="title">天目湖山水园</p>
+									<p class="price">¥488</p>
+								</div>
+								
+							</div>
+							
+							
+							<div class="main-content-3" id="informationebook">
+								<header>旅游资讯
+									<a>更多<i class="fa fa-angle-right"></i></a>
+								</header>
+								<ul class="mui-table-view">
+				                    <li class="mui-table-view-cell text_img_1">
+				                    	<div class="text">
+				                    		<span>比亚迪混动和丰田比有什么优势，15万你选择谁</span>
+				                    		<p>2017-10-30</p>
+				                    	</div>
+				                    	<div class="img">
+				                    		<img src="https://p3.pstatp.com/large/43480003ffd832b1f967" />
+				                    	</div>
+				                    </li>
+				                    <li class="mui-table-view-cell text_img_1">
+				                    	<div class="text">
+				                    		<span>比亚迪混动和丰田比有什么优势，15万你选择谁</span>
+				                    		<p>2017-10-30</p>
+				                    	</div>
+				                    	<div class="img">
+				                    		<img src="https://p3.pstatp.com/large/43480003ffd832b1f967" />
+				                    	</div>
+				                    </li>
+				                    <li class="mui-table-view-cell text_img_1">
+				                    	<div class="text">
+				                    		<span>比亚迪混动和丰田比有什么优势，15万你选择谁</span>
+				                    		<p>2017-10-30</p>
+				                    	</div>
+				                    	<div class="img">
+				                    		<img src="https://p3.pstatp.com/large/43480003ffd832b1f967" />
+				                    	</div>
+				                    </li>
+				       
+				                </ul>
+							</div>
+							
+							
+							<div class="main-content-3" id="informationalbum">
+								<header>旅游资讯
+									<a>更多<i class="fa fa-angle-right"></i></a>
+								</header>
+								<ul class="mui-table-view">
+				                    <li class="mui-table-view-cell text_img_1">
+				                    	<div class="text">
+				                    		<span>比亚迪混动和丰田比有什么优势，15万你选择谁</span>
+				                    		<p>2017-10-30</p>
+				                    	</div>
+				                    	<div class="img">
+				                    		<img src="https://p3.pstatp.com/large/43480003ffd832b1f967" />
+				                    	</div>
+				                    </li>
+				                    <li class="mui-table-view-cell text_img_1">
+				                    	<div class="text">
+				                    		<span>比亚迪混动和丰田比有什么优势，15万你选择谁</span>
+				                    		<p>2017-10-30</p>
+				                    	</div>
+				                    	<div class="img">
+				                    		<img src="https://p3.pstatp.com/large/43480003ffd832b1f967" />
+				                    	</div>
+				                    </li>
+									<li class="mui-table-view-cell text_img_1">
+				                    	<div class="text">
+				                    		<span>比亚迪混动和丰田比有什么优势，15万你选择谁</span>
+				                    		<p>2017-10-30</p>
+				                    	</div>
+				                    	<div class="img">
+				                    		<img src="https://p3.pstatp.com/large/43480003ffd832b1f967" />
+				                    	</div>
+				                    </li>
+				                </ul>
+							</div>
+		               	
+		               	
+		               	
+		               	<div style="height: 56px;width:100%;float: left;"></div>
+
+
+	                </div>
+	            </div>
+	            
+	            
+	            
+	            
+            </div>
+ 
+	        
+       	 <div class="mui-off-canvas-backdrop"></div>
+        </div>
+    </div>
+     
+
+	<script src="../js/jquery-2.1.0.min.js"></script>
+	<script src="../js/mui.min.js"></script> 
+	<script src="../js/app.js"></script>
+	<script src="../js/template.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+    	mui.init();
+    	mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		}); 
+		//图片滚动
+		mui('.mui-slider').slider({
+			interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		
+		window.addEventListener("init",function(event){
+			
+	    	initLanguage();
+	    	initUserInfo();
+	    });
+    	
+    	
+    	
+    	mui(".yysh_user").on("tap",".yysh_user_head",function(){
+    		loginValidate({
+    			success:function(){
+    				openViewWithFire("personal","init",{});
+    			}
+    		})
+    	});
+    	
+    	
+    	
+    	
+    	//初始化用户信息
+    	function initUserInfo(){
+    		var user = getGlobalAttribute("userInfo");
+    		if(null != user){
+    			if(null != user.headImg){
+    				$("#userHeadImg").attr("src",basePath+user.headImg);
+    			}
+    			$("#yysh_name").html(user.nickname);
+    			$("#yysh_username").html(user.username);
+    		}
+    		
+    	}
+    	
+    	//初始化语言信息
+    	function initLanguage(){
+    		var language = getLanguage();
+    		
+    		$("#yysh_name").html(language.login);
+    		$("#main_title").html(language.main_title);
+    		$("#main_yhq").html(language.coupons);
+    		$("#main_wdsc").html(language.collect);
+    	}
+    	
+    	
+    	
+    	
+    	
+    	mui("nav").on("tap",'a',function(){
+    		$("nav a").each(function(i,obj){
+    			var span1 = $(obj).children().first();
+    			var styles = span1.attr("class");
+    			styles = styles.replace("-filled","");
+    			span1.attr("class",styles);
+    		});
+    		var thisStyle = $(this).children().first().attr("class");
+    		if(thisStyle.indexOf("mui-icon-map")== -1){
+    			thisStyle = thisStyle+"-filled";
+    		}
+    		
+    		$(this).children().first().attr("class",thisStyle);
+    		
+    	});
+    	
+    	
+    	//列表页
+    	mui(".mui-grid-view").on("tap","#info",function(){
+    		openViewWithFire("info-list","init",{})
+    	});
+    	
+    	//商品页
+    	mui(".mui-grid-view").on("tap","#goods",function(){
+    		openViewWithFire("merchandise-list","init",{})
+    	});
+    	
+    	//diy足迹页
+    	mui(".mui-grid-view").on("tap","#diyTrack",function(){
+    		openViewWithFire("map","init",{})
+    	}); 
+    	
+    	
+    	
+     
+     
+    </script>
+</body>
+</html>

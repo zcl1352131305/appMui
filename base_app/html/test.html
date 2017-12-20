@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+</head>
+<body>
+    <!-- 主界面菜单同时移动 -->
+        <!-- 侧滑导航根容器 -->
+        <div class="mui-off-canvas-wrap mui-draggable">
+            <!-- 主页面容器 -->
+            <div class="mui-inner-wrap">
+                <!-- 菜单容器 -->
+                <aside class="mui-off-canvas-left" id="offCanvasSide">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <!-- 菜单具体展示内容 -->
+                            
+                        </div>
+                    </div>
+                </aside>
+                <!-- 主页面标题 -->
+                <header class="mui-bar mui-bar-nav">
+                    <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>
+                    <h1 class="mui-title">标题</h1>
+                </header>
+                <nav class="mui-bar mui-bar-tab">
+        		    <a class="mui-tab-item mui-active">
+        		        <span class="mui-icon mui-icon-home"></span>
+        		        <span class="mui-tab-label">首页</span>
+        		    </a>
+        		    <a class="mui-tab-item">
+        		        <span class="mui-icon mui-icon-phone"></span>
+        		        <span class="mui-tab-label">电话</span>
+        		    </a>
+        		    <a class="mui-tab-item">
+        		        <span class="mui-icon mui-icon-email"></span>
+        		        <span class="mui-tab-label">邮件</span>
+        		    </a>
+        		    <a class="mui-tab-item">
+        		        <span class="mui-icon mui-icon-gear"></span>
+        		        <span class="mui-tab-label">设置</span>
+        		    </a>
+        		</nav>
+                <!-- 主页面内容容器 -->
+                <div class="mui-content mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 主界面具体展示内容 -->
+                        
+                    </div>
+                </div>
+           	 <div class="mui-off-canvas-backdrop"></div>
+            </div>
+        </div>
+    <script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+    </script>
+</body>
+</html>

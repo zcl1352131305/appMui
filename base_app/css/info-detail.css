@@ -1,0 +1,27 @@
+.mui-content header h1{
+	font-size: 18px;
+	margin: 10px 10px 0 10px;
+	line-height: 25px;
+}
+.mui-content header p{
+	font-size: 12px;
+	margin: 10px 10px -5px 10px;
+	line-height: 25px;
+}
+
+.mui-content header hr{
+	-webkit-transform: scaleY(.5);
+    transform: scaleY(.5);    
+}
+.mui-content .content{
+	margin: 10px 10px 0 10px;
+	font-size: 14px;
+	line-height: 22px;
+}
+.mui-content .content p{
+	color: #000;
+	
+}
+.mui-content .content img{
+	width: 100%;
+}

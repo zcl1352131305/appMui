@@ -1,0 +1,13 @@
+.mui-content{
+	width: 100%;
+}
+.mui-content .map{
+	width: 100%;
+	height: auto;
+	
+	position: fixed;
+	top: 50px;
+	bottom: 50px;
+	left: 0;
+
+}
